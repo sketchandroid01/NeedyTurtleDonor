@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.HomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimary"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Register as a community member :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Name *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your Name *"
+                android:autofillHints="Your Name *"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="textPersonName"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your blood group *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_border"
+                >
+                <Spinner
+                    android:id="@+id/spinner_blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact information :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:text="** Your contact information visibility will help a needy person on time, The number can save anyone’s life.**"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your valid phone number *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your valid phone number *"
+                android:autofillHints="Your valid phone number *"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="phone"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your alternate phone number"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_alternate_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your alternate phone number"
+                android:autofillHints="Your alternate phone number"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="phone"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your valid email id"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your valid email id"
+                android:autofillHints="Your alternate phone number"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="textEmailAddress"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Would you like to make your contact details visible so that A needy person can contact you on emergency time? *"
+                android:textColor="@color/dark_gray"
+                android:textSize="16sp"
+                android:layout_marginTop="16dp"
+                />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                >
+                <RadioButton
+                    android:id="@+id/radio_yes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Yes"
+                    />
+
+                <RadioButton
+                    android:id="@+id/radio_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="No"
+                    />
+
+            </RadioGroup>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:text="** we are requesting you to make contact details visible. If you select no then your contact details will be hidden.**"
+                />
+
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location information :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your valid Pincode *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Your valid Pincode *"
+                android:autofillHints="Your valid phone number *"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="number"
+                />
+            <TextView
+                android:id="@+id/tv_pincode_valid_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:text="Please enter a valid pincode. It is very important while someone searching nearby donor."
+                />
+
+
+            <EditText
+                android:id="@+id/edt_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:autofillHints="City"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:layout_marginTop="15dp"
+                android:inputType="text"
+                />
+
+            <EditText
+                android:id="@+id/edt_district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="District"
+                android:autofillHints="District"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:layout_marginTop="15dp"
+                android:inputType="text"
+                />
+
+            <EditText
+                android:id="@+id/edt_states"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="States"
+                android:autofillHints="States"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:layout_marginTop="15dp"
+                android:inputType="number"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your full present address *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_current_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your full present address *"
+                android:autofillHints="Enter your full present address *"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:minHeight="100dp"
+                android:gravity="start"
+                android:inputType="text"
+                />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal information :"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginTop="20dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date of birth *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_dob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Date of birth *"
+                android:autofillHints="Date of birth *"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="text"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_border"
+                >
+
+                <EditText
+                    android:id="@+id/edt_years"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="0"
+                    android:autofillHints="0"
+                    android:textColor="@color/black"
+                    android:inputType="text"
+                    android:layout_centerVertical="true"
+                    android:background="@color/transparent"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:layout_centerVertical="true"
+                    android:text="Years"
+                    />
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Gender *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_border"
+                >
+                <Spinner
+                    android:id="@+id/spinner_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Height"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_height"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Height"
+                android:autofillHints="Height"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Weight"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_weight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Weight"
+                android:autofillHints="Weight"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Disease you have *"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="5dp"
+                android:text="** Please carefully tick and mention the disease as it may harm the person whom you are donating the blood**"
+                />
+
+
+            <CheckBox
+                android:id="@+id/checkbox_no_disease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Disease"
+                />
+            <TextView
+                android:id="@+id/tv_no_disease_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:text="It's very good to don't have any disease. But if you have any please don't hesitate to mention, as this is very important for the needy person."
+                />
+
+            <LinearLayout
+                android:id="@+id/linear_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

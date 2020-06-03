@@ -5,5 +5,34 @@
 
     <string name="terms_condition">Terms &amp; Condition</string>
 
+    <string-array name="blood_group">
+        <item>Select your blood group</item>
+        <item>A+</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B-</item>
+        <item>AB+</item>
+        <item>AB-</item>
+        <item>O+</item>
+        <item>O-</item>
+    </string-array>
+    <string-array name="gender">
+        <item>Select your gender</item>
+        <item>Male</item>
+        <item>Female</item>
+        <item>Rather not to say</item>
+    </string-array>
+    <string-array name="disease_list">
+        <item>Blood pressure</item>
+        <item>Diabetes</item>
+        <item>Asthma</item>
+        <item>Anemia</item>
+        <item>HIV</item>
+        <item>Cancer</item>
+        <item>Thyroid</item>
+        <item>Cardiac Arrest</item>
+    </string-array>
+
+
 
 </resources>
