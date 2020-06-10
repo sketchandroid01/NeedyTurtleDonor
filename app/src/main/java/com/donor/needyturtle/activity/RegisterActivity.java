@@ -133,7 +133,6 @@ public class RegisterActivity extends AppCompatActivity {
 
 
 
-
         btn_choose_pic.setOnClickListener(v -> {
             if (checkPermission()){
                 dialogSelect();
