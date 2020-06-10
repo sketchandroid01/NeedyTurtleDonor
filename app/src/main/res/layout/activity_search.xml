@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorPrimary"
+        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please do not play with the search because it may effect a needy person to lose a valuable opportunity of getting a donor."
+                android:textColor="@color/colorPrimary"
+                android:layout_marginBottom="5dp"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:textColor="@color/black"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/curved_border"
+                >
+                <Spinner
+                    android:id="@+id/spinner_blood_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="10dp"
+                    />
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your pincode to get near by donors"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_pincode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your pincode"
+                android:autofillHints="Enter your pincode"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enter your contact number to help you in future"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_contact_no"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your valid mobile number"
+                android:autofillHints="Enter your valid mobile number"
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="phone"
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Why are you searching for donor?"
+                android:textColor="@color/black"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="16sp"
+                />
+            <EditText
+                android:id="@+id/edt_why"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="E.g. operation, camp etc."
+                android:autofillHints="E.g. operation, camp etc."
+                android:textColor="@color/black"
+                android:background="@drawable/curved_border"
+                android:inputType="text"
+                />
+
+
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:text="Search"
+                android:background="@drawable/button_background"
+                />
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

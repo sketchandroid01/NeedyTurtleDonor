@@ -1,4 +1,4 @@
-package com.donor.needyturtle.utils;
+package com.donor.needyturtle.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;

@@ -9,11 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import com.donor.needyturtle.R;
-import com.donor.needyturtle.utils.BannerAdapter;
+import com.donor.needyturtle.adapter.BannerAdapter;
 import com.rd.PageIndicatorView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Timer;
 import java.util.TimerTask;
 

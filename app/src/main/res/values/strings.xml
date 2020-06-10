@@ -32,6 +32,13 @@
         <item>Thyroid</item>
         <item>Cardiac Arrest</item>
     </string-array>
+    <string-array name="id_array_list">
+        <item>Select your ID type</item>
+        <item>Adhaar</item>
+        <item>PAN</item>
+        <item>Voter</item>
+        <item>Passport</item>
+    </string-array>
 
 
 
