@@ -9,8 +9,8 @@
 
     <RelativeLayout
         android:id="@+id/rel_group"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:background="@color/colorPrimary"
         >
         <TextView

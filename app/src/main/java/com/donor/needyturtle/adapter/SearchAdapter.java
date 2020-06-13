@@ -18,12 +18,14 @@ import java.util.ArrayList;
 
 public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHolder>{
 
-    private ArrayList<DataModel> wish_list;
+    private ArrayList<DataModel> arrayList;
     private Context context;
+    private String blood_group;
 
-    public SearchAdapter(ArrayList<DataModel> wish_list, Context context){
-        this.wish_list= wish_list;
+    public SearchAdapter(ArrayList<DataModel> arrayList, Context context, String blood_group){
+        this.arrayList= arrayList;
         this.context = context;
+        this.blood_group = blood_group;
     }
 
     @Override
@@ -38,11 +40,18 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.MyViewHold
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
 
+        DataModel dataModel = arrayList.get(position);
+
+        holder.tv_age.setText(dataModel.getAge());
+        holder.tv_blood_group.setText(blood_group);
+        holder.tv_location.setText(dataModel.getCurrent_address());
+        holder.tv_disease.setText(dataModel.getDieases());
+
     }
 
     @Override
     public int getItemCount() {
-        return wish_list.size();
+        return arrayList.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

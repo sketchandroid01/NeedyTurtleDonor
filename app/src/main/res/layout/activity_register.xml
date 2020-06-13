@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".activity.HomeActivity">
 
@@ -11,6 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
         android:background="@color/colorPrimary"
+        app:titleTextColor="@color/white"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
         />
 
     <ScrollView
@@ -106,17 +109,41 @@
                 android:layout_marginBottom="5dp"
                 android:textSize="16sp"
                 />
-            <EditText
-                android:id="@+id/edt_contact"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your valid phone number *"
-                android:autofillHints="Your valid phone number *"
-                android:textColor="@color/black"
                 android:background="@drawable/curved_border"
-                android:inputType="phone"
-                />
+                >
+                <EditText
+                    android:id="@+id/edt_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your valid phone number *"
+                    android:autofillHints="Your valid phone number *"
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"
+                    android:inputType="phone"
+                    android:layout_toStartOf="@+id/tv_verify_mobile"
+                    />
 
+
+                <TextView
+                    android:id="@+id/tv_verify_mobile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/white"
+                    android:paddingStart="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/button_background"
+                    android:text="Verify"
+                    />
+
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -147,16 +174,38 @@
                 android:layout_marginBottom="5dp"
                 android:textSize="16sp"
                 />
-            <EditText
-                android:id="@+id/edt_email"
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Your valid email id"
-                android:autofillHints="Your alternate phone number"
-                android:textColor="@color/black"
                 android:background="@drawable/curved_border"
-                android:inputType="textEmailAddress"
-                />
+                >
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Your valid email id"
+                    android:autofillHints="Your alternate phone number"
+                    android:textColor="@color/black"
+                    android:background="@color/transparent"
+                    android:inputType="textEmailAddress"
+                    android:layout_toStartOf="@+id/tv_verify_email"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_verify_email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:textColor="@color/white"
+                    android:paddingStart="20dp"
+                    android:paddingTop="5dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="5dp"
+                    android:background="@drawable/button_background"
+                    android:text="Verify"
+                    />
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -178,6 +227,7 @@
                     android:id="@+id/radio_yes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:checked="true"
                     android:text="Yes"
                     />
 
@@ -291,12 +341,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Enter your full present address *"
-                android:autofillHints="Enter your full present address *"
                 android:textColor="@color/black"
                 android:background="@drawable/curved_border"
                 android:minHeight="100dp"
                 android:gravity="start"
-                android:inputType="text"
                 />
 
 
@@ -319,14 +367,15 @@
                 android:layout_marginBottom="5dp"
                 android:textSize="16sp"
                 />
-            <EditText
-                android:id="@+id/edt_dob"
+            <TextView
+                android:id="@+id/tv_dob"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Date of birth *"
                 android:autofillHints="Date of birth *"
                 android:textColor="@color/black"
                 android:background="@drawable/curved_border"
+                android:textSize="15sp"
                 android:inputType="text"
                 />
 
@@ -347,7 +396,7 @@
                 >
 
                 <EditText
-                    android:id="@+id/edt_years"
+                    android:id="@+id/edt_age"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="0"
@@ -480,11 +529,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="If you have any other problem please specify"
-                android:autofillHints="Weight"
                 android:textColor="@color/black"
                 android:background="@drawable/curved_border"
-                android:inputType="text"
                 android:minHeight="100dp"
+                android:layout_marginTop="10dp"
                 android:gravity="start"
                 />
 
@@ -563,9 +611,10 @@
                 <ImageView
                     android:id="@+id/image"
                     android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:maxHeight="150dp"
+                    android:layout_height="150dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="20dp"
+                    android:contentDescription="@string/app_name"
                     />
 
             </RelativeLayout>

@@ -1,5 +1,7 @@
 package com.donor.needyturtle.activity;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.widget.RelativeLayout;
@@ -52,19 +54,20 @@ public class HomeActivity extends AppCompatActivity {
         initViewPager();
 
         rel_register.setOnClickListener(v -> {
-
-
+            Intent intent = new Intent(HomeActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
 
         rel_search_donor.setOnClickListener(v -> {
-
-
-
+            Intent intent = new Intent(HomeActivity.this, SearchActivity.class);
+            startActivity(intent);
         });
 
         tv_terms_condition.setOnClickListener(v -> {
-
-
+            String url = "https://donor.needyturtle.com/terms.php";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
 
 

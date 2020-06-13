@@ -1,6 +1,9 @@
 package com.donor.needyturtle.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,14 +12,21 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.donor.needyturtle.R;
+import com.donor.needyturtle.network.ApiConstant;
+import com.donor.needyturtle.network.PostDataParser;
 import com.sdsmdg.tastytoast.TastyToast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
@@ -37,6 +47,7 @@ public class SearchActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Search for donor");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back);
 
     }
 
@@ -70,6 +81,27 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        edt_pincode.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if (s.toString().length() == 6){
+                    pincodeValidation(s.toString());
+                }
 
             }
         });
@@ -122,7 +154,79 @@ public class SearchActivity extends AppCompatActivity {
             return;
         }
 
-
+        searchDonor();
     }
 
+    private String Districtname = "", statename = "", Taluk = "";
+    public void pincodeValidation(String pincode) {
+
+        String url = ApiConstant.BASE_URL;
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("pincode", pincode);
+        params.put("type", ApiConstant.pincode_validation);
+
+        new PostDataParser(SearchActivity.this, url, params, false,
+                new PostDataParser.OnGetResponseListner() {
+                    @Override
+                    public void onGetResponse(JSONObject response) {
+                        if (response != null) {
+
+                            try {
+                                int is_valid = response.optInt("is_valid");
+                                if (is_valid == 1) {
+
+                                    Districtname = response.optString("Districtname");
+                                    statename = response.optString("statename");
+                                    Taluk = response.optString("Taluk");
+                                }
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }
+                });
+    }
+
+    public void searchDonor() {
+
+        String url = ApiConstant.BASE_URL;
+
+        HashMap<String, String> params = new HashMap<>();
+        params.put("search", blood_group);
+        params.put("pincode", edt_pincode.getText().toString());
+        params.put("states", statename);
+        params.put("district", Districtname);
+        params.put("city", Taluk);
+        params.put("contact", edt_contact_no.getText().toString());
+        params.put("donor_search_reason", edt_why.getText().toString());
+        params.put("type", ApiConstant.search_donor);
+
+        new PostDataParser(SearchActivity.this, url, params, true,
+                new PostDataParser.OnGetResponseListner() {
+                    @Override
+                    public void onGetResponse(JSONObject response) {
+                        if (response != null) {
+
+                            try {
+                                String search_id = response.optString("search_id");
+                                JSONArray search_result = response.getJSONArray("search_result");
+
+                                if (search_result.length() > 0){
+                                    Intent intent = new Intent(SearchActivity.this, SearchListActivity.class);
+                                    intent.putExtra("array", search_result.toString());
+                                    intent.putExtra("blood_group", blood_group);
+                                    startActivity(intent);
+                                }
+
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    }
+                });
+    }
 }

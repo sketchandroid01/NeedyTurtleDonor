@@ -15,6 +15,7 @@
     <color name="dark_gray">#333333</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="blue">#0050EF</color>
     <color name="transparent">#00000000</color>
 
 </resources>
